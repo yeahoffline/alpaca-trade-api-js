@@ -301,9 +301,7 @@ describe("crypto API", () => {
         timeframe: "1D",
         exchanges: ["BNCU"],
       })
-    ).to.eventually.be.rejectedWith(
-      "code: 400, message: Unexpected query parameter(s): exchanges"
-    );
+    ).to.eventually.be.rejectedWith("is not allowed");
   });
 
   it("get snapshots", async () => {

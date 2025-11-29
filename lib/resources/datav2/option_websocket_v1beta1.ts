@@ -48,7 +48,7 @@ export class AlpacaOptionClient extends Websocket {
       trades: symbols.trades ?? [],
       quotes: symbols.quotes ?? [],
     };
-    this.conn.send(this.msgpack.encode(subMsg));
+    this.conn.send(this.msgpack.encode(subMsg).slice());
   }
 
   subscribeAll(): void {
@@ -75,7 +75,7 @@ export class AlpacaOptionClient extends Websocket {
       trades: symbols.trades ?? [],
       quotes: symbols.quotes ?? [],
     };
-    this.conn.send(this.msgpack.encode(unsubMsg));
+    this.conn.send(this.msgpack.encode(unsubMsg).slice());
   }
 
   updateSubscriptions(msg: { trades: Array<string>; quotes: Array<string> }): void {

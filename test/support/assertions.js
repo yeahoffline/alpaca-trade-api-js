@@ -23,7 +23,7 @@ const apiMethod = (fn) => async (req, res, next) => {
 
 // validates input against a joi schema. Throws an apiError if it does not pass.
 const assertSchema = (value, schema, options) => {
-  const result = joi.validate(value, schema, options)
+  const result = joi.object(schema).validate(value, options)
   if (result.error) {
     throw apiError(422, result.error)
   }

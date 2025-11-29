@@ -28,7 +28,7 @@ export class AlpacaNewsCLient extends Websocket {
       news,
     };
     console.log("subscribing", subMsg);
-    this.conn.send(this.msgpack.encode(subMsg));
+    this.conn.send(this.msgpack.encode(subMsg).slice());
   }
 
   subscribeAll(): void {
@@ -49,7 +49,7 @@ export class AlpacaNewsCLient extends Websocket {
       action: "unsubscribe",
       news,
     };
-    this.conn.send(this.msgpack.encode(unsubMsg));
+    this.conn.send(this.msgpack.encode(unsubMsg).slice());
   }
 
   updateSubscriptions(msg: { news: Array<string> }): void {

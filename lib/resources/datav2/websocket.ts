@@ -80,7 +80,7 @@ interface WebsocketSession {
   url: string;
   currentState: STATE;
   pongTimeout?: NodeJS.Timeout;
-  pingInterval?: NodeJS.Timer;
+  pingInterval?: NodeJS.Timeout;
   pongWait: number;
   isReconnected: boolean;
 }
@@ -234,7 +234,7 @@ export abstract class AlpacaWebsocket
       key: this.session.apiKey,
       secret: this.session.secretKey,
     };
-    this.conn.send(this.msgpack.encode(authMsg));
+    this.conn.send(this.msgpack.encode(authMsg).slice());
     this.emit(STATE.AUTHENTICATING);
     this.session.currentState = STATE.AUTHENTICATING;
   }

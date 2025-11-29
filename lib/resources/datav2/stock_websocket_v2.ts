@@ -114,7 +114,7 @@ export class AlpacaStocksClient extends Websocket {
       statuses: symbols.statuses ?? [],
       lulds: symbols.lulds ?? [],
     };
-    this.conn.send(this.msgpack.encode(subMsg));
+    this.conn.send(this.msgpack.encode(subMsg).slice());
   }
 
   subscribeAll(): void {
@@ -190,7 +190,7 @@ export class AlpacaStocksClient extends Websocket {
       statuses: symbols.statuses ?? [],
       lulds: symbols.lulds ?? [],
     };
-    this.conn.send(this.msgpack.encode(unsubMsg));
+    this.conn.send(this.msgpack.encode(unsubMsg).slice());
   }
 
   updateSubscriptions(msg: {
