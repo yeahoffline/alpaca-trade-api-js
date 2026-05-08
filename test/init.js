@@ -3,7 +3,9 @@
 require('dotenv').config()
 
 require('mocha')
-require('chai').use(require('chai-as-promised'))
+const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
+chai.use(chaiAsPromised.default ?? chaiAsPromised)
 
 const mockServer = require('./support/mock-server')
 

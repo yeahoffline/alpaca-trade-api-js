@@ -35,33 +35,37 @@
   },
   "homepage": "https://alpaca.markets/",
   "dependencies": {
-    "axios": "^1.13.2",
-    "dotenv": "^17.2.3",
+    "axios": "^1.16.0",
+    "dotenv": "^17.4.2",
     "events": "^3.3.0",
     "just-extend": "^6.2.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.18.1",
     "minimist": "^1.2.8",
     "msgpack5": "^6.0.2",
     "nats": "^2.29.3",
     "urljoin": "^0.1.5",
-    "ws": "^8.18.3"
+    "ws": "^8.20.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/lodash": "^4.17.21",
-    "@types/msgpack5": "^3.4.6",
-    "@types/node": "^24.10.1",
+    "@eslint/js": "^10.0.1",
+    "@types/lodash": "^4.17.24",
+    "@types/msgpack5": "^3.4.7",
+    "@types/node": "^25.6.2",
     "@types/ws": "^8.18.1",
-    "body-parser": "^2.2.1",
-    "eslint": "^9.39.1",
-    "chai": "^4.5.0",
-    "chai-as-promised": "^7.1.2",
-    "express": "^5.1.0",
-    "globals": "^16.5.0",
-    "joi": "^18.0.2",
+    "body-parser": "^2.2.2",
+    "chai": "^6.2.2",
+    "chai-as-promised": "^8.0.2",
+    "eslint": "^10.3.0",
+    "express": "^5.2.1",
+    "globals": "^17.6.0",
+    "joi": "^18.2.1",
     "mocha": "^11.7.5",
-    "sinon": "^21.0.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "sinon": "^22.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.2"
+  },
+  "overrides": {
+    "diff": "9.0.0",
+    "serialize-javascript": "7.0.5"
   }
 }
